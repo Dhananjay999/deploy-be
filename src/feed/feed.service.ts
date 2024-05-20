@@ -19,7 +19,7 @@ export class FeedService {
    */
   async createNewPost(FeedPostData: FeedPostDto) {
     const data = new this.postModel(FeedPostData);
-    await data.save(); // Wait for the save operation to complete
+    await data.save();
     return { message: 'Post created successfully' };
   }
 }
