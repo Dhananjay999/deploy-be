@@ -6,6 +6,7 @@ import { FeedModule } from './feed/feed.module';
 import { RouterModule } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
+import { IdGeneratorService } from './services/id-generator/id-generator.service';
 
 @Module({
   imports: [
@@ -27,6 +28,6 @@ import { ConfigModule } from '@nestjs/config';
     ]),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, IdGeneratorService],
 })
 export class AppModule {}

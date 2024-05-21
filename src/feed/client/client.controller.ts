@@ -12,8 +12,6 @@ export class ClientController {
 
   @Post('post')
   private createPost(@Body() FeedPostData: FeedPostDto) {
-    console.log(FeedPostData);
-
     return this.feedService.createNewPost(FeedPostData);
   }
 }
