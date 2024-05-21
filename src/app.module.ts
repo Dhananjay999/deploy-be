@@ -7,6 +7,7 @@ import { RouterModule } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import * as cors from 'cors';
+import { IdGeneratorService } from './services/id-generator/id-generator.service';
 
 @Module({
   imports: [
@@ -28,7 +29,7 @@ import * as cors from 'cors';
     ]),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, IdGeneratorService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
