@@ -22,7 +22,7 @@ def metaTags():
         "description": "This is the home page of my Flask app",
         "keywords": "Flask, Python, Web Development",
     }
-    return render_template('index.html', meta_tags=meta_tags)
+    return render_template('index2.html', meta_tags=meta_tags)
 
 @app.route('/get/metatag2', methods=['GET'])
 def metaTags2():
@@ -31,7 +31,7 @@ def metaTags2():
         "description": "This is the home page of my Flask app",
         "keywords": "Flask, Python, Web Development",
     }
-    return render_template('index2.html', meta_tags=meta_tags)
+    return render_template('index.html', meta_tags=meta_tags)
 @app.route('/get/metatag3', methods=['GET'])
 def metaTags3():
     meta_tags = {
@@ -39,7 +39,7 @@ def metaTags3():
         "description": "This is the home page of my Flask app",
         "keywords": "Flask, Python, Web Development",
     }
-    return render_template('index3.html', meta_tags=meta_tags)
+    return render_template('index4.html', meta_tags=meta_tags)
 @app.route('/get/metatag4', methods=['GET'])
 def metaTags4():
     meta_tags = {
@@ -47,7 +47,7 @@ def metaTags4():
         "description": "This is the home page of my Flask app",
         "keywords": "Flask, Python, Web Development",
     }
-    return render_template('index4.html', meta_tags=meta_tags)
+    return render_template('index3.html', meta_tags=meta_tags)
 # API route to handle POST requests
 @app.route('/api/post', methods=['POST'])
 def post_data():
