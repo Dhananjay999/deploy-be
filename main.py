@@ -40,7 +40,7 @@ def metaTags3():
         "keywords": "Flask, Python, Web Development",
     }
     return render_template('index3.html', meta_tags=meta_tags)
-@app.route('/get/metatags4', methods=['GET'])
+@app.route('/get/metatagss', methods=['GET'])
 def metaTags4():
     meta_tags = {
         "title": "Home Page",
