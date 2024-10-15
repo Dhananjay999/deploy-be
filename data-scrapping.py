@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 # Send a GET request to the URL
 
-response = requests.get('https://shareglb-dev.dxassist.ai/search/share?sid=01JA5KBW4ZE4HDFT77F8847RZB')
+response = requests.get('https://shareglb-dev.dxassist.ai/search/share?sid=01JA5KBW4ZE4HDFT77F8847RB')
 
 # Parse the HTML content using BeautifulSoup
 
