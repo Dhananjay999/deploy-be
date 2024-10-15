@@ -15,7 +15,7 @@ def get_data():
         'status': 200
     }
     return jsonify(data)
-@app.route('/get/metatags', methods=['GET'])
+@app.route('/get/metatag', methods=['GET'])
 def metaTags():
     meta_tags = {
         "title": "Home Page",
@@ -24,7 +24,7 @@ def metaTags():
     }
     return render_template('index.html', meta_tags=meta_tags)
 
-@app.route('/get/metatags2', methods=['GET'])
+@app.route('/get/metatag2', methods=['GET'])
 def metaTags2():
     meta_tags = {
         "title": "Home Page",
@@ -32,7 +32,7 @@ def metaTags2():
         "keywords": "Flask, Python, Web Development",
     }
     return render_template('index2.html', meta_tags=meta_tags)
-@app.route('/get/metatags3', methods=['GET'])
+@app.route('/get/metatag3', methods=['GET'])
 def metaTags3():
     meta_tags = {
         "title": "Home Page",
@@ -40,14 +40,14 @@ def metaTags3():
         "keywords": "Flask, Python, Web Development",
     }
     return render_template('index3.html', meta_tags=meta_tags)
-@app.route('/get/metatagss', methods=['GET'])
+@app.route('/get/metatag4', methods=['GET'])
 def metaTags4():
     meta_tags = {
         "title": "Home Page",
         "description": "This is the home page of my Flask app",
         "keywords": "Flask, Python, Web Development",
     }
-    return render_template('index3.html', meta_tags=meta_tags)
+    return render_template('index4.html', meta_tags=meta_tags)
 # API route to handle POST requests
 @app.route('/api/post', methods=['POST'])
 def post_data():
