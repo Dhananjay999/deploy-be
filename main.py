@@ -32,6 +32,14 @@ def metaTags2():
         "keywords": "Flask, Python, Web Development",
     }
     return render_template('index2.html', meta_tags=meta_tags)
+@app.route('/get/metatags3', methods=['GET'])
+def metaTags3():
+    meta_tags = {
+        "title": "Home Page",
+        "description": "This is the home page of my Flask app",
+        "keywords": "Flask, Python, Web Development",
+    }
+    return render_template('index3.html', meta_tags=meta_tags)
 # API route to handle POST requests
 @app.route('/api/post', methods=['POST'])
 def post_data():
