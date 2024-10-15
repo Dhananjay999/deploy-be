@@ -17,8 +17,9 @@ def get_data():
     return jsonify(data)
 @app.route('/get/'+apiEndPoint, methods=['GET'])
 def metaTags():
+    conv_id = request.args.get('convID')
     meta_tags = {
-        "title": "Home Page",
+        "title": conv_id,
         "description": "This is the home page of my Flask app",
         "keywords": "Flask, Python, Web Development",
     }
