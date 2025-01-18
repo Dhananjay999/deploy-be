@@ -1,0 +1,1 @@
+VALID_MODES = ['prime_mode', 'research_mode', 'guideline_mode']
