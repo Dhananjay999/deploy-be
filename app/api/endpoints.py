@@ -10,12 +10,12 @@ def create_app():
     app = Flask(__name__)
 
     @app.route('/api/questionCount/getAll', methods=["GET"])
-    def list_events():
+    def get_all_counts():
         events = list(conv_count_service.get_all_conversation_count())
         return events
 
     @app.route("/api/questionCount/<user_id>", methods=["GET"])
-    def add_event(user_id):
+    def get_count_by_user(user_id):
         try:
             modes = request.args.get('modes')
             mode_list = VALID_MODES if not modes else modes.split(",")

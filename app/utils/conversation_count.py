@@ -10,7 +10,7 @@ class ConvCountService:
         self.conv_count_collection = MongDBClient().get_collection('question_count')
 
     def get_all_conversation_count(self):
-        """Get all conversation counts for a all users"""
+        """Get all conversation counts for all users"""
         return self.conv_count_collection.find({}, {"_id": 0})
 
     def insert_conversation_count(self, user_id:str, mode_name:str)->bool:
@@ -35,7 +35,7 @@ class ConvCountService:
         return True
     
     def get_conversation_count_by_user(self, user_id:str):
-        """ get user conversation count by user """
+        """ get conversation count by user """
         try:
             result = self.conv_count_collection.find_one({'user_id':user_id},{"_id": 0})
             return result

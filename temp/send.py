@@ -7,22 +7,22 @@ channel.queue_declare(queue='event_queue', durable=True)
 
 # Send a message
 
-# for i in range(5):
-message = {
-'user_id': f'DCNDJCN86{1}',
-'mode_name': 'prime_mode',
-}
-print(f"Sent: {message}")
-M = json.dumps(message)
+for i in range(3):
+    message = {
+    'user_id': f'DCNDJCN86{i}',
+    'mode_name': 'research_mode',
+    }
+    print(f"Sent: {message}")
+    M = json.dumps(message)
 
-channel.basic_publish(
-exchange='',  # Default exchange
-routing_key='event_queue',  # Name of the queue
-body=M,  # The message body (e.g., JSON string)
-properties=pika.BasicProperties(
-    delivery_mode=2 
-)
+    channel.basic_publish(
+    exchange='',  # Default exchange
+    routing_key='event_queue',  # Name of the queue
+    body=M,  # The message body (e.g., JSON string)
+    properties=pika.BasicProperties(
+        delivery_mode=2 
     )
+        )
 
 
 connection.close()
