@@ -1,29 +1,44 @@
-# README #
+## Init Setup
 
-This README would normally document whatever steps are necessary to get your application up and running.
+- Activate python 3.12.x using the following command
+  `pyenv shell 3.12.x`
 
-### What is this repository for? ###
+- Install dependencies using the following command
+  `poetry install`
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## for running Application
 
-### How do I get set up? ###
+`poetry run python3 -m app.app`
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+## Folder Structure
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+```
+├── temp/
+│   ├── send.py
+├── app/
+│   ├── constants/
+│   │   ├── constant.py
+│   ├── __init__.py
+│   ├── utils/
+│   │   ├── env_config.py
+│   │   ├── __init__.py
+│   │   ├── logger.py
+│   │   ├── conversation_count.py
+│   ├── rabbitMQ/
+│   │   ├── __init__.py
+│   │   ├── consumar.py
+│   ├── models/
+│   │   ├── conversation_count.py
+│   ├── app.py
+│   ├── db/
+│   │   ├── mongo_db_client.py
+│   │   ├── __init__.py
+│   ├── api/
+│   │   ├── endpoints.py
+├── .env.sample
+├── pyproject.toml
+├── README.md
+├── .gitignore
+├── .env.json
+├── poetry.lock
+```
