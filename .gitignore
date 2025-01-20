@@ -1,1 +1,6 @@
 __pycache__/
+
+# environment variables
+*.env
+*.env.*
+!*.env.sample

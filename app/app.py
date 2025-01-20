@@ -8,14 +8,12 @@ def run_consumer()->None:
 
 def main():
     """Initializing RabbitMQ and Flask"""
-    # Initialize database
-    # init_db()
 
     # Start RabbitMQ consumer in a background thread
     consumer_thread = Thread(target=run_consumer, daemon=True)
     consumer_thread.start()
 
-    # # Start Flask API
+    # Start Flask API
     app = create_app()
     app.run(host="0.0.0.0", port=5000,debug=True)
 

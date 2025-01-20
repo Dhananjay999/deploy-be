@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
 from app.constants.constant import VALID_MODES
 from app.utils.conversation_count import ConvCountService
+from app.utils.logger import get_logger
 
 conv_count_service = ConvCountService()
+logger = get_logger(__name__)
 def create_app():
     """Initialize Flask endpoints"""
     app = Flask(__name__)
@@ -30,7 +32,7 @@ def create_app():
                 return jsonify({"error": "User not found"}), 404
 
         except Exception as e:
-            print("Error",e)
+            logger.error("An unexpected error occur: %s",str(e))
             return jsonify({"error": "An unexpected error occur"}), 500
         
     return app

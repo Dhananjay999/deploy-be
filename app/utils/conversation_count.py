@@ -1,9 +1,12 @@
 from app.constants.constant import VALID_MODES
 from app.db.mongo_db_client import MongDBClient
+from app.utils.logger import get_logger
 
 
 class ConvCountService:
+    """Conversation Count Service"""
     def __init__(self):
+        self.logger = get_logger(__name__)
         self.conv_count_collection = MongDBClient().get_collection('question_count')
 
     def get_all_conversation_count(self):
@@ -17,7 +20,6 @@ class ConvCountService:
         Returns True if the operation is successful, False otherwise.
         """
         try:
-            # valid_modes = ['prime_mode', 'research_mode', 'guideline_mode']
             self.conv_count_collection.update_one(
                        {'user_id': user_id},
                         {
@@ -26,10 +28,9 @@ class ConvCountService:
                         },
                         upsert=True
                     )
-            print(mode_name)
-
+            
         except Exception as e:
-            print(f"Error inserting conversation count: {str(e)}")
+            self.logger.error("Error inserting conversation count: %s",str(e))
             return False
         return True
     
@@ -39,7 +40,7 @@ class ConvCountService:
             result = self.conv_count_collection.find_one({'user_id':user_id},{"_id": 0})
             return result
         except Exception as e:
-            print(f"Error inserting conversation count: {str(e)}")
+            self.logger.error("Error while getting conversation count: %s",str(e))
             return None
 
         
